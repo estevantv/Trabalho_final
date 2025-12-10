@@ -119,7 +119,7 @@ function verificarUsuarioLogado(req, res, proximo) {
 
 
 
-server.get("/", (req, res) => {
+server.get("/",verificarUsuarioLogado, (req, res) => {
     res.send(`<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -331,7 +331,7 @@ server.post("/Cadastro_player", verificarUsuarioLogado, (req, res) => {
     if(nome && nick && func && gen && time && elo){
         console.log("Dados recebidos:", req.body);
        ListaPlayers.push({ nome, nick, func, gen, time, elo });
-        return res.redirect("/Listarplayer");
+        return res.redirect("/ListarPlayers");
     } else {
         let conteudo = `<!DOCTYPE html>
 <html lang="en">
@@ -380,7 +380,7 @@ server.post("/Cadastro_player", verificarUsuarioLogado, (req, res) => {
                                         <option value="Midlaner">Midlaner</option>
                                         <option value="Atirador">Atirador</option>
                                         <option value="Suporte">Suporte</option>
-                                    </select`>;
+                                    </select>`
 
         if(!func){
             conteudo += `<div><p class="text-danger">Informe a posição na equipe!</p></div>`;
@@ -412,7 +412,7 @@ server.post("/Cadastro_player", verificarUsuarioLogado, (req, res) => {
         conteudo+=`</div>
            <div class="lado">
             <label for="Elo">Elo:</label>
-               <select class="form-select" id="elo" name="elo" value="${elo || ''}>
+               <select class="form-select" id="elo" name="elo" value="${elo || ''}">
                                    <option selected disabled value=""> </option>
                                         <option value="Sem elo">Sem elo</option>
                                         <option value="Ferro">Ferro</option>
@@ -425,7 +425,7 @@ server.post("/Cadastro_player", verificarUsuarioLogado, (req, res) => {
                                         <option value="Mestre">Mestre</option>
                                         <option value="Grão-Mestre">Grão-Mestre</option>
                                         <option value="Chalenger">Chalenger</option>
-                                    </select>"`
+                                    </select>`
 
                                     if(!elo){
                                         conteudo += `<div><p class="text-danger">Informe o Elo!</p></div>`;
@@ -443,8 +443,8 @@ server.post("/Cadastro_player", verificarUsuarioLogado, (req, res) => {
     
 </body>
 </html>`;
-
-res.send(conteudo);});
+                                
+res.send(conteudo);}});
 
 
 // Listar equipes
@@ -481,7 +481,7 @@ conteudo +=`
 }
 conteudo+=`</tbody>
                     </table>
-                    <a class="btn btn-secondary" href="//Cadastro_time">Voltar</a>
+                    <a class="btn btn-secondary" href="/">Voltar</a>
                 </div>
             </body>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -528,7 +528,7 @@ conteudo +=`
 }
 conteudo+=`</tbody>
                     </table>
-                    <a class="btn btn-secondary" href="/cadastroUsuario">Voltar</a>
+                    <a class="btn btn-secondary" href="/">Voltar</a>
                 </div>
             </body>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
