@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de jogador</title>
+    <link rel="stylesheet" href="css/CP_CSS.css">
+</head>
+ <br>
+    <br>
+    <br>
+    <h1>Cadastro do Jogador</h1>
+<div class="login-box">
+    <form action="/login" method="POST" novalidate>
+<br><br>
+    <div class="linha">
+        <div class="lado">
+            <label for="nome">Nome do Jogador:</label>
+            <input type="text" id="nome" name="nome" required>
+        </div>
+
+        <div class="lado">
+            <label for="nick">Nickname in-game:</label>
+            <input type="text" id="nick" name="nick" required>
+        </div>
+    </div>
+<br><br>
+    <div class="linha">
+        <div class="lado">
+            <label for="posicao">Posição na equipe:</label>
+            <select class="form-select" id="func" name="func">
+                                        <option selected disabled value=""> </option>
+                                        <option value="AC">Toplaner</option>
+                                        <option value="AL">Jungler</option>
+                                        <option value="AP">Midlaner</option>
+                                        <option value="AM">Atirador</option>
+                                        <option value="BA">Suporte</option>
+                                    </select>
+        </div>
+
+        <div class="lado">
+            <label for="genero">Gênero:</label>
+            <input type="text" id="gender" name="gender" required>
+        </div>
+    </div>
+<br><br>
+    <div class="linha">
+        <div class="lado">
+            <label for="time">Nome do time:</label>
+            dependente de lista_jogador
+        </div>
+           <div class="lado">
+            <label for="Elo">Elo:</label>
+               <select class="form-select" id="func" name="func">
+                                   <option selected disabled value=""> </option>
+                                        <option value="Sem elo">Sem elo</option>
+                                        <option value="Ferro">Ferro</option>
+                                        <option value="Bronze">Bronze</option>
+                                        <option value="Prata">Prata</option>
+                                        <option value="Ouro">Ouro</option>
+                                        <option value="Esmeralda">Esmeralda</option>
+                                        <option value="Platina">Platina</option>
+                                        <option value="Diamante">Diamante</option>
+                                        <option value="Mestre">Mestre</option>
+                                        <option value="Grão-Mestre">Grão-Mestre</option>
+                                        <option value="Chalenger">Chalenger</option>
+                                    </select>
+                                    </select>
+        </div>
+    </div>
+    
+
+    <button type="submit" class="submit-btn">Enviar</button>
+
+</form>
+
+</div>
+    
+</body>
+</html>
