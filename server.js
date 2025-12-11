@@ -202,18 +202,24 @@ server.post("/Cadastro_time", verificarUsuarioLogado, (req, res) => {
         return res.redirect("/ListarEquipes");
     } else {
         let conteudo = `<!DOCTYPE html>
-        <html lang="pt-br">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Cadastro do time</title>
-            <link rel="stylesheet" href="/style.css">
-        </head>
-        <body>
-            <div class="login-box">
-                <form action="/Cadastro_time" method="POST" novalidate>
-                    <label for="equipe">Nome da equipe:</label>
-                    <input type="text" id="equipe" name="equipe" required value="${nome || ''}">`;
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <br>
+    <br>
+    <br>
+    <h1>Cadastro do time</h1>
+<div class="login-box">
+    <form action="/Cadastro_time" method="POST" novalidate>
+
+        <label for="equipe" class="form-label">Nome da equipe:</label>
+        <br><br>
+        <input type="text" class="form-control" id="equipe" name="equipe" required value="${nome || ''}">`;
 
         if(!nome){
             conteudo += `<div><p class="text-danger">Informe o nome da equipe!</p></div>`;
@@ -368,7 +374,7 @@ server.post("/Cadastro_player", verificarUsuarioLogado, (req, res) => {
             <input type="text" id="nome" name="nome" required value="${nome || ''}">`;
 
         if(!nome){
-            conteudo += `<div><p class="text-danger">Informe o nome!</p></div>`;
+            conteudo += `<div><h6 class="text-danger">Informe o nome!</h6></div>`;
         }
 
         conteudo += `     </div>
@@ -378,7 +384,7 @@ server.post("/Cadastro_player", verificarUsuarioLogado, (req, res) => {
             <input type="text" id="nick" name="nick" required value="${nick || ''}">`;
 
         if(!nick){
-            conteudo += `<div><p class="text-danger">Informe o nick in-game!</p></div>`;
+            conteudo += `<div><h6 class="text-danger">Informe o nick in-game!</h6></div>`;
         }
 
         conteudo += `</div>
@@ -397,7 +403,7 @@ server.post("/Cadastro_player", verificarUsuarioLogado, (req, res) => {
                                     </select>`
 
         if(!func){
-            conteudo += `<div><p class="text-danger">Informe a posição na equipe!</p></div>`;
+            conteudo += `<div><h6 class="text-danger">Informe a posição na equipe!</h6></div>`;
         }
 
         conteudo += `</div>
@@ -407,7 +413,7 @@ server.post("/Cadastro_player", verificarUsuarioLogado, (req, res) => {
             <input type="text" id="gender" name="gender" required value="${gen || ''}">`;
 
             if(!gen){
-                 conteudo += `<div><p class="text-danger">Informe o gênero!</p></div>`;
+                 conteudo += `<div><h6 class="text-danger">Informe o gênero!</h6></div>`;
             }
             conteudo +=`</div>
     </div>
@@ -421,7 +427,7 @@ server.post("/Cadastro_player", verificarUsuarioLogado, (req, res) => {
         <option>${ListaEquipes[i].nome}</option>`;}
         conteudo+=`</select>`;
         if(!time){
-            conteudo += `<div><p class="text-danger">Informe o Time!</p></div>`;
+            conteudo += `<div><h6 class="text-danger">Informe o Time!</h6></div>`;
         }
         conteudo+=`</div>
            <div class="lado">
@@ -442,7 +448,7 @@ server.post("/Cadastro_player", verificarUsuarioLogado, (req, res) => {
                                     </select>`
 
                                     if(!elo){
-                                        conteudo += `<div><p class="text-danger">Informe o Elo!</p></div>`;
+                                        conteudo += `<div><h6 class="text-danger">Informe o Elo!</h6></div>`;
                                     }
 
         conteudo+=`</div>
