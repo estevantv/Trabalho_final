@@ -150,30 +150,43 @@ server.get("/",verificarUsuarioLogado, (req, res) => {
 server.get("/Cadastro_time", (req, res) => {
     res.send(`
         <!DOCTYPE html>
-        <html lang="pt-br">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Cadastro do time</title>
-            <link rel="stylesheet" href="/style.css">
-        </head>
-        <body>
-            <div class="login-box">
-                <form action="/Cadastro_time" method="POST" novalidate>
-                    <label for="equipe">Nome da equipe:</label>
-                    <input type="text" id="equipe" name="equipe" required>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <br>
+    <br>
+    <br>
+    <h1>Cadastro do time</h1>
+<div class="login-box">
+    <form action="/login" method="POST" novalidate>
 
-                    <label for="cap">Nome do capitão:</label>
-                    <input type="text" id="cap" name="cap" required>
+        <label for="equipe" class="form-label">Nome da equipe:</label>
+        <br><br>
+        <input type="text" class="form-control" id="equipe" name="equipe" required>
+        <br><br>
+        <br><br>
 
-                    <label for="ctt">Telefone de Contato:</label>
-                    <input type="text" id="ctt" name="ctt" required>
+        <label for="cap" class="form-label mt-3">Nome do capitão:</label>
+        <BR><br>
+        <input type="text" class="form-control" id="cap" name="cap" required>
+                <br><br>
+        <br><br>
 
-                    <button type="submit" class="submit-btn">Enviar</button>
-                </form>
-            </div>
-        </body>
-        </html>
+        <label for="ctt" class="form-label mt-3">Telefone de Contato:</label>
+        <BR><br>
+        <input type="text" class="form-control" id="ctt" name="ctt" required>
+        <BR><br><BR><br><br>
+        <button type="submit" class="submit-btn">Enviar</button>
+    </form>
+</div>
+    
+</body>
+</html>
     `);
 });
 
