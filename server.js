@@ -163,7 +163,7 @@ server.get("/Cadastro_time", (req, res) => {
     <br>
     <h1>Cadastro do time</h1>
 <div class="login-box">
-    <form action="/login" method="POST" novalidate>
+    <form action="/Cadastro_time" method="POST" novalidate>
 
         <label for="equipe" class="form-label">Nome da equipe:</label>
         <br><br>
