@@ -11,8 +11,9 @@ let ListaEquipes = [];
 let ListaPlayers = [];
 
 const server = express();
-
 server.use(express.static(__dirname));
+
+server.use(express.static(path.join(__dirname, "css")));
 
 server.use(express.urlencoded({ extended: true }));
 server.use(cookieParser());
@@ -128,7 +129,7 @@ server.get("/",verificarUsuarioLogado, (req, res) => {
     <title>Document</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
       rel="stylesheet">
-    <link rel="stylesheet" href="css_menu.css">
+    <link rel="stylesheet" href="/css_menu.css">
 </head>
 <body>
     <div class="top"><h1>Menu do sistema</h1><br><br><br><br>
@@ -237,7 +238,7 @@ server.get("/Cadastro_player", (req, res) => {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de jogador</title>
-    <link rel="stylesheet" href="CP_CSS.css">
+    <link rel="stylesheet" href="/CP_CSS.css">
 </head>
  <br>
     <br>
@@ -339,7 +340,7 @@ server.post("/Cadastro_player", verificarUsuarioLogado, (req, res) => {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de jogador</title>
-    <link rel="stylesheet" href="CP_CSS.css">
+    <link rel="stylesheet" href="/CP_CSS.css">
 </head>
  <br>
     <br>
