@@ -374,7 +374,7 @@ server.post("/Cadastro_player", verificarUsuarioLogado, (req, res) => {
             <input type="text" id="nome" name="nome" required value="${nome || ''}">`;
 
         if(!nome){
-            conteudo += `<div><p style="font-size: xx-small;" class="text-danger">Informe o nome!</p></div>`;
+            conteudo += `<div><p class="text-danger">Informe o nome!</p></div>`;
         }
 
         conteudo += `     </div>
@@ -384,7 +384,7 @@ server.post("/Cadastro_player", verificarUsuarioLogado, (req, res) => {
             <input type="text" id="nick" name="nick" required value="${nick || ''}">`;
 
         if(!nick){
-            conteudo += `<div><p style="font-size: xx-small;" class="text-danger">Informe o nick in-game!</p></div>`;
+            conteudo += `<div><p class="text-danger">Informe o nick in-game!</p></div>`;
         }
 
         conteudo += `</div>
@@ -403,7 +403,7 @@ server.post("/Cadastro_player", verificarUsuarioLogado, (req, res) => {
                                     </select>`
 
         if(!func){
-            conteudo += `<div><p style="font-size: xx-small;" class="text-danger">Informe a posição na equipe!</p></div>`;
+            conteudo += `<div><p class="text-danger">Informe a posição na equipe!</p></div>`;
         }
 
         conteudo += `</div>
@@ -413,7 +413,7 @@ server.post("/Cadastro_player", verificarUsuarioLogado, (req, res) => {
             <input type="text" id="gender" name="gender" required value="${gen || ''}">`;
 
             if(!gen){
-                 conteudo += `<div><p style="font-size: xx-small;" class="text-danger">Informe o gênero!</p></div>`;
+                 conteudo += `<div><p class="text-danger">Informe o gênero!</p></div>`;
             }
             conteudo +=`</div>
     </div>
@@ -427,7 +427,7 @@ server.post("/Cadastro_player", verificarUsuarioLogado, (req, res) => {
         <option>${ListaEquipes[i].nome}</option>`;}
         conteudo+=`</select>`;
         if(!time){
-            conteudo += `<div><p style="font-size: xx-small;" class="text-danger">Informe o Time!</p></div>`;
+            conteudo += `<div><p class="text-danger">Informe o Time!</p></div>`;
         }
         conteudo+=`</div>
            <div class="lado">
@@ -448,7 +448,7 @@ server.post("/Cadastro_player", verificarUsuarioLogado, (req, res) => {
                                     </select>`
 
                                     if(!elo){
-                                        conteudo += `<div><p style="font-size: xx-small;" class="text-danger">Informe o Elo!</p></div>`;
+                                        conteudo += `<div><p class="text-danger">Informe o Elo!</p></div>`;
                                     }
 
         conteudo+=`</div>
